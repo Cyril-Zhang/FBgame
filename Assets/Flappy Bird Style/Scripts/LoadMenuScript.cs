@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class LoadNextScene : MonoBehaviour
+public class LoadMenuScript : MonoBehaviour
 {
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -18,6 +15,6 @@ public class LoadNextScene : MonoBehaviour
     }
     public void TaskOnClick()
     {
-        Application.LoadLevel(1);
+        Application.LoadLevel(0);
     }
 }

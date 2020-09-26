@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LoadNextScene : MonoBehaviour
+public class LoadSettingScript : MonoBehaviour
 {
     void Start()
     {
@@ -18,6 +18,6 @@ public class LoadNextScene : MonoBehaviour
     }
     public void TaskOnClick()
     {
-        Application.LoadLevel(1);
+        Application.LoadLevel(2);
     }
 }
