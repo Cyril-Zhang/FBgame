@@ -18,6 +18,7 @@ public class LoadNextScene : MonoBehaviour
     }
     public void TaskOnClick()
     {
+        AudioManager.instance.Play("Button Click");
         Application.LoadLevel(1);
     }
 }

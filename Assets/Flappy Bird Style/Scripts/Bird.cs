@@ -26,6 +26,7 @@ public class Bird : MonoBehaviour
 			if (Input.GetMouseButtonDown(0)) 
 			{
 				//...tell the animator about it and then...
+				AudioManager.instance.Play("Bird Flap");
 				anim.SetTrigger("Flap");
 				//...zero out the birds current y velocity before...
 				rb2d.velocity = Vector2.zero;
@@ -40,9 +41,13 @@ public class Bird : MonoBehaviour
 	{
 		// Zero out the bird's velocity
 		rb2d.velocity = Vector2.zero;
+		if (isDead == false){
+			AudioManager.instance.Play("Game Over");
+		}
 		// If the bird collides with something set it to dead...
 		isDead = true;
 		//...tell the Animator about it...
+		
 		anim.SetTrigger ("Die");
 		//...and tell the game control about it.
 		GameControl.instance.BirdDied ();

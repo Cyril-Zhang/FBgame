@@ -17,6 +17,7 @@ public class QuitScript : MonoBehaviour
     }
     public void TaskOnClick()
     {
+        AudioManager.instance.Play("Button Click");
         Application.Quit();
     }
 }
