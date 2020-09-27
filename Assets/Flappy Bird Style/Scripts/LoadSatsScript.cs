@@ -17,6 +17,7 @@ public class LoadSatsScript : MonoBehaviour
     }
     public void TaskOnClick()
     {
+        AudioManager.instance.Play("Button Click");
         Application.LoadLevel(3);
     }
 }
