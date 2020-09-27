@@ -33,6 +33,10 @@ public class GameControl : MonoBehaviour
 		{
 			//...reload the current scene.
 			//load main menu
+			DataCollecter.addTime(Timer.getTime());
+			DataCollecter.addScore(score);
+			DataCollecter.addFlap(Bird.getFlap_time());
+			Bird.resetFlap_time();
 			Application.LoadLevel(0);
 		}
 	}

@@ -7,7 +7,8 @@ public class Bird : MonoBehaviour
 	private bool isDead = false;			//Has the player collided with a wall?
 
 	private Animator anim;					//Reference to the Animator component.
-	private Rigidbody2D rb2d;				//Holds a reference to the Rigidbody2D component of the bird.
+	private Rigidbody2D rb2d;               //Holds a reference to the Rigidbody2D component of the bird.
+	private static int flap_time;
 
 	void Start()
 	{
@@ -16,6 +17,7 @@ public class Bird : MonoBehaviour
 		//Get and store a reference to the Rigidbody2D attached to this GameObject.
 		rb2d = GetComponent<Rigidbody2D>();
 		upForce = DataCollecter.getSpeed();
+		flap_time = 0;
 	}
 
 	void Update()
@@ -34,6 +36,7 @@ public class Bird : MonoBehaviour
 				//	new Vector2(rb2d.velocity.x, 0);
 				//..giving the bird some upward force.
 				rb2d.AddForce(new Vector2(0, upForce));
+				flap_time++;
 			}
 		}
 	}
@@ -53,4 +56,12 @@ public class Bird : MonoBehaviour
 		//...and tell the game control about it.
 		GameControl.instance.BirdDied ();
 	}
+	public static int getFlap_time()
+    {
+		return flap_time;
+    }
+    public static void resetFlap_time()
+    {
+		flap_time = 0;
+    }
 }

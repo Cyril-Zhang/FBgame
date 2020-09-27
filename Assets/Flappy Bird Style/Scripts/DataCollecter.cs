@@ -13,7 +13,10 @@ public class DataCollecter : MonoBehaviour
     private static float current_flap_volume;
     private static float Speed;
     private static int level;
-
+    private static List<float> game_time;
+    private static List<int> flap_time;
+    private static List<int> score;
+    private static List<string> stats;
     void Start()
     {
         if (instance == null)
@@ -27,7 +30,10 @@ public class DataCollecter : MonoBehaviour
             current_flap_volume = 5;
             level = 1;
             Speed = 200;
-
+            game_time = new List<float>();
+            flap_time = new List<int>();
+            score = new List<int>();
+            stats = new List<string>();
         }
         else
         {
@@ -81,5 +87,26 @@ public class DataCollecter : MonoBehaviour
     public static int getLevel()
     {
         return level;
+    }
+    public static void addTime(float t)
+    {
+        game_time.Add(t);
+    }
+    public static void addFlap(int t)
+    {
+        flap_time.Add(t);
+    }
+    public static void addScore(int t)
+    {
+        score.Add(t);
+    }
+    public static List<string> getStats()
+    {
+        for(int i = 0; i < game_time.Count; i++)
+        {
+            string temp = string.Format("{0}\t{1}\t{2}\t{3}\n", i + 1, game_time[i], flap_time[i], score[i]);
+            stats.Add(temp);
+        }
+        return stats;
     }
 }
