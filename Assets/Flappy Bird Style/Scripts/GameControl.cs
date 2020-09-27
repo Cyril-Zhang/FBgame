@@ -32,7 +32,8 @@ public class GameControl : MonoBehaviour
 		if (gameOver && Input.GetMouseButtonDown(0)) 
 		{
 			//...reload the current scene.
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			//load main menu
+			Application.LoadLevel(0);
 		}
 	}
 
@@ -54,5 +55,6 @@ public class GameControl : MonoBehaviour
 		gameOvertext.SetActive (true);
 		//Set the game to be over.
 		gameOver = true;
+
 	}
 }
