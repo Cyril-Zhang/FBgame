@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*
         if (DataCollecter.getNeed_bgm()) { 
             AudioManager.instance.Play("Background");
         }
@@ -14,6 +15,7 @@ public class MainMenu : MonoBehaviour
         {
             AudioManager.instance.Stop("Background");
         }
+        */
         
     }
 

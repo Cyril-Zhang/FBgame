@@ -27,6 +27,9 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+        //init background sound
+        Sound m= Array.Find(sounds,sounds=>sounds.name=="Background");
+        m.source.Play();
     }
 
     public void Play(string name){
