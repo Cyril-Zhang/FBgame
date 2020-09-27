@@ -23,7 +23,6 @@ public class AudioManager : MonoBehaviour
         foreach(Sound s in sounds){
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
@@ -40,5 +39,25 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sounds => sounds.name == name);
         s.source.Stop();
     }
+    public bool isPlaying(string name)
+    {
+        Sound s = Array.Find(sounds, sounds => sounds.name == name);
+        return s.source.isPlaying;
+    }
+    public void setLoop(string name, bool tf)
+    {
+        Sound s = Array.Find(sounds, sounds => sounds.name == name);
+        s.source.loop = tf;
+    }
 
+    public float getVolume(string name)
+    {
+        Sound s = Array.Find(sounds, sounds => sounds.name == name);
+        return s.source.volume;
+    }
+    public void setVolume(string name, float volume)
+    {
+        Sound s = Array.Find(sounds, sounds => sounds.name == name);
+        s.source.volume = volume;
+    }
 }
