@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class DataCollecter : MonoBehaviour
 {
     public static DataCollecter instance;
@@ -100,13 +100,22 @@ public class DataCollecter : MonoBehaviour
     {
         score.Add(t);
     }
-    public static List<string> getStats()
+    public static List<int> getScores()
     {
-        for(int i = 0; i < game_time.Count; i++)
-        {
-            string temp = string.Format("{0}\t{1}\t{2}\t{3}\n", i + 1, game_time[i], flap_time[i], score[i]);
-            stats.Add(temp);
-        }
-        return stats;
+        return score;
+    }
+    public static List<float> getTimes(){
+        return game_time;
+    }
+    public static List<int> getFlaps(){
+        return flap_time;
+    }   
+
+    public static void Reset()
+    {
+        game_time = new List<float>();
+        flap_time = new List<int>();
+        score = new List<int>();
+        stats = new List<string>();
     }
 }
