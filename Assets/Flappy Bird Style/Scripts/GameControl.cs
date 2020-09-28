@@ -39,6 +39,10 @@ public class GameControl : MonoBehaviour
 			Bird.resetFlap_time();
 			Application.LoadLevel(0);
 		}
+		if(Timer.getTime() > 30)
+        {
+			scrollSpeed = - Timer.getTime() / 20;
+        }
 	}
 
 	public void BirdScored()

@@ -23,5 +23,6 @@ public class ScrollingObject : MonoBehaviour
 		{
 			rb2d.velocity = Vector2.zero;
 		}
+		rb2d.velocity = new Vector2(GameControl.instance.scrollSpeed, 0);
 	}
 }
